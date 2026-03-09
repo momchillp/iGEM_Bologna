@@ -9,7 +9,7 @@
 <title>iGEM Bologna 2026</title>
 
 <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="footer_style.css">
 </head>
 
 
@@ -46,24 +46,24 @@
 
 <img src="logo.jpeg" class="main-logo" alt="iGEM Bologna logo">
 
-<h1>Welcome to iGEM Bologna 2026</h1>
+<h1 data-i18n="hero-title">Welcome to iGEM Bologna 2026</h1>
 
-<p class="subtitle">
+<p data-i18n="hero-subtitle" class="subtitle">
 Support our project in the world of synthetic biology innovations
 </p>
 
 <div class="hero-buttons">
 
 <a href="#project">
-<button class="project-btn">About the Project</button>
+<button data-i18n="btn-project" class="project-btn">About the Project</button>
 </a>
 
 <a href="#igem">
-<button class="secondary-btn">What is iGEM?</button>
+<button data-i18n="btn-igem" class="secondary-btn">What is iGEM?</button>
 </a>
 
 <a href="#team">
-<button class="secondary-btn">Meet the Team</button>
+<button data-i18n="btn-team" class="secondary-btn">Meet the Team</button>
 </a>
 
 </div>
@@ -78,13 +78,13 @@ Support our project in the world of synthetic biology innovations
 
 <section id="igem" class="info-section">
 
-<h2>What is iGEM?</h2>
+<h2 data-i18n="igem-title">What is iGEM?</h2>
 
-<p>
+<p data-i18n="igem-text">
 iGEM is an international synthetic biology competition where student teams design and build biological systems using standardized genetic parts and integrating laboratory research, computational design, entrepreneurship, and science communication.
 </p>
 <br>
-<P> 
+<P data-i18n="igem-text2"> 
 Each year, many different teams from universities around the world develop innovative projects addressing global challenges regarding issues in fields such as health, sustainability, biotechnology, or environmental protection.
 At the end of the experience, each team will present the results obtained in a huge exhibition, and they will compete to win medals and special awards.
 In 2025, more than 400 teams from 66 countries took part in the competition, with over 5000 participants.
@@ -99,17 +99,17 @@ In 2025, more than 400 teams from 66 countries took part in the competition, wit
 
 <section id="project" class="info-section">
 
-<h2>About Our Project</h2>
+<h2 data-i18n="project-title">About Our Project</h2>
 
-<h3>Project outline</h3>
+<h3 data-i18n="project-outline">Project outline</h3>
 <br>
-<p>
+<p data-i18n="project-text">
 Our project goal is to develop a targeted delivery system using engineered bacteriophages as precise carriers for CRISPR/CAS gene-editing tools. By applying peptide-targeting technology, we program bacteriophages to recognize specific receptors expressed on cancer cells. This approach enables the selective delivery of gene-editing machinery directly to tumor cells, improving targeting accuracy while minimizing effects on healthy tissues
 </p>
 <br><br>
-<h3>Aim of the project</h3>
+<h3 data-i18n="project-aim">Aim of the project</h3>
 <br>
-<p>
+<p data-i18n="project-aim-text">
 The aim of this project is to develop a targeted double CAS9/gRNA delivery system capable of editing oncogenic punctual mutations in cancer cells. To accomplish this, we plan to use phage display to identify peptides that bind specific tumor cell receptors and engineer bacteriophages to deliver CAS9-base editor tools directly to these cells. 
 The first validation step would be through a fluorescence-based proof of concept, starting in E. coli than moving in eukaryotic cancer cell lines. The system will be applied to edit point mutations in driver oncogenes.
 
@@ -122,13 +122,13 @@ The first validation step would be through a fluorescence-based proof of concept
 
 <section id="team" class="info-section team-section">
 
-<h2>Meet the Team</h2>
+<h2 data-i18n="team-title">Meet the Team</h2>
 
 
-<p>
+<p data-i18n="team-text">
 Our team is composed of international and interdisciplinary students with backgrounds in molecular biology, synthetic biology, bioinformatics, biochemistry, biomedical engineering, and genetics.</p>
 <br>
-<p>
+<p data-i18n="team-extra">
 This wide spectrum allows us to confront the project from multiple perspectives, including experimental design, computational modeling, and forward applications. The whole team collaborates closely to design experiments, analyze results, and communicate findings to achieve better results.
 Four more positions will be filled in the next month.
 </p>
@@ -138,28 +138,49 @@ Four more positions will be filled in the next month.
 <section class="team-section">
 
 <ul class="team-list">
-<li><strong>Lorenzo Tolomelli</strong> — BSc in Biotechnology, currently studying Molecular and Cell Biology.</li>
-<li><strong>Francesca Bignami</strong> — BSc in Biotechnology, currently studying Molecular and Cell Biology.</li>
-<li><strong>Sara Centonze</strong> — BSc in Biotechnology, currently studying Molecular and Cell Biology.</li>
-<li><strong>Mariana Mussot López</strong> — BSc in Pharmacological and Biological Chemistry, currently studying Molecular and Cell Biology.</li>
-<li><strong>Momchil Petkov</strong> — Undergraduate, currently studying Genomics.</li>
+<li>
+  <strong>Lorenzo Tolomelli</strong>⌬
+  <span data-i18n="lorenzo-role">BSc in Biotechnology, currently studying Molecular and Cell Biology.</span>
+</li>
+
+<li>
+  <strong>Francesca Bignami</strong>⚛︎  
+  <span data-i18n="francesca-role">BSc in Biotechnology, currently studying Molecular and Cell Biology.</span>
+</li>
+
+<li>
+  <strong>Sara Centonze</strong>ᛝ
+  <span data-i18n="sara-role">BSc in Biotechnology, currently studying Molecular and Cell Biology.</span>
+</li>
+
+<li>
+  <strong>Mariana Mussot López</strong>⬡
+  <span data-i18n="mariana-role">BSc in Pharmacological and Biological Chemistry, currently studying Molecular and Cell Biology.</span>
+</li>
+
+<li>
+  <strong>Momchil Petkov</strong>∑
+  <span data-i18n="momchil-role">Undergraduate, currently studying Genomics.</span>
+</li>
 </ul>
 
 </section>
 <br><br>
 <br><br>
-<h2>Economic prospect</h2>
-<p>
+<h2 data-i18n="economic-title">Economic prospect</h2>
+<p data-i18n="economic-text">
 To participate in the competition, we need to pay registration fees, tickets for the Jamboree (final fair) as well as transportation and accommodation for each member of the team. Moreover, we will buy reagents to perform lab experiments.
 In total, a minimum of 20’000 euros is required, divided as follows:
-<li>Registration fee: 6’000 euros;</li>
-<li>Finalization fee: 2’800 euros;</li>
-<li>Jamboree ticket (7 members): 575 euros per member, 4’000 euros total;</li>
-<li>Travel and accommodation (round trip + 4 nights): 400 euros per member, 2’800 euros total;</li>
-<li>Lab consumable and reagents: 5’000 euros.</li>
-<br><br>
 </p>
-<p>For our sponsors we offer visibility in the biggest synthetic biology exhibition.</p>
+<br>
+<li data-i18n="fee1">Registration fee: 6’000 euros;</li>
+<li data-i18n="fee2">Finalization fee: 2’800 euros;</li>
+<li data-i18n="fee3">Jamboree ticket (7 members): 575 euros per member, 4’000 euros total;</li>
+<li data-i18n="fee4">Travel and accommodation (round trip + 4 nights): 400 euros per member, 2’800 euros total;</li>
+<li data-i18n="fee5">Lab consumable and reagents: 5’000 euros.</li>
+<br><br>
+
+<p data-i18n="economic-text2">For our sponsors we offer visibility in the biggest synthetic biology exhibition.</p>
 </section>
 
 
@@ -167,15 +188,15 @@ In total, a minimum of 20’000 euros is required, divided as follows:
 
 <section class="sponsor-section">
 
-<h2>Become a Partner</h2>
+<h2 data-i18n="sponsor-title">Become a Partner</h2>
 
-<p>
+<p data-i18n="sponsor-text">
 Support our research and help us represent Bologna
 at the international iGEM competition.
 </p>
 
 <a href="mailto:uniboigem@gmail.com">
-<button class="sponsor-btn">Contact Us</button>
+<button data-i18n="btn-contact" class="sponsor-btn">Contact Us</button>
 </a>
 
 </section>
@@ -186,10 +207,19 @@ at the international iGEM competition.
 
 <img src="watermark2.png" class="footer-watermark" alt="footer watermark">
 
+<div class="footer-links">
+    <a href="https://instagram.com/igem_bologna" target="_blank">
+        <img src="instagram.png" alt="Instagram" class="footer-icon">
+    </a>
+
+    <a href="mailto:uniboigem@gmail.com">
+        <img src="email.png" alt="Email" class="footer-icon">
+    </a>
+</div>
+
 </footer>
 
-
+<script src="translate.js"></script>
 </body>
 
 </html>
-
