@@ -1,452 +1,84 @@
-/* GENERAL */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root {
+  --bg: #0a0a0c;
+  --text: #f5f5f5;
+  --orange: #ff6a00;
+  --pink: #ff2e88;
 }
 
-html{
-scroll-behavior:smooth;
-}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { background: var(--bg); color: var(--text); overflow-x:hidden; }
 
-body{
-
-font-family: "Segoe UI", Arial, sans-serif;
-color:#222;
-
-display:flex;
-flex-direction:column;
-min-height:100vh;
-
-}
-
+/* PARTICLES */
+#bg { position: fixed; top:0; left:0; z-index:-3; }
 
 /* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.3);
+  z-index: 100;
+}
+.watermark { height: 40px; }
 
-header{
+/* HERO */
+.hero { height: 100vh; display:flex; justify-content:center; align-items:center; }
+.hero-content { text-align:center; }
+.gradient-text { background: linear-gradient(90deg,var(--orange),var(--pink)); -webkit-background-clip:text; color:transparent; }
+.subtitle { opacity:0.8; margin:10px 0; }
 
-background:#B43B2A;
-height:80px;
+/* BUTTONS */
+.btn { padding:12px 25px; border-radius:30px; text-decoration:none; display:inline-block; margin-top:10px; }
+.primary { background: linear-gradient(90deg,var(--orange),var(--pink)); color:white; }
+.glow { box-shadow: 0 0 20px rgba(255,46,136,0.5); }
 
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 40px;
-
+/* PHAGE SECTION */
+.phage-section { padding: 120px 20px; }
+.phage-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+#phage-canvas {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  z-index: 1;
+}
+#phage-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
-.watermark{
-height:60px;
+.info-box {
+  background: rgba(255,46,136,0.08);
+  border:1px solid rgba(255,46,136,0.4);
+  padding:20px;
+  border-radius:15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255,46,136,0.2);
 }
-
-.header-right{
-display:flex;
-gap:10px;
-}
-
-
-/* LANGUAGE BUTTONS */
-
-.lang-btn{
-
-background:white;
-border:none;
-
-padding:8px 14px;
-
-border-radius:5px;
-
-font-weight:600;
-cursor:pointer;
-
-}
-
-.lang-btn.active{
-background:#ececec;
-}
-
-
-/* FLAG BUTTONS */
-
-.flag-btn{
-
-background:none;
-border:none;
-
-cursor:pointer;
-
-padding:4px;
-
-transition:0.2s;
-
-}
-
-.flag-btn img{
-
-height:24px;
-width:auto;
-
-border-radius:3px;
-
-box-shadow:0 0 4px rgba(0,0,0,0.2);
-
-}
-
-.flag-btn:hover{
-transform:scale(1.1);
-}
-
-
-/* HERO SECTION */
-
-.hero{
-
-padding:80px 20px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-}
-
-.main-logo{
-
-width:200px;
-margin-bottom:25px;
-
-}
-
-h1{
-color:#293B6B;
-font-size:36px;
-margin-bottom:15px;
-}
-
-.subtitle{
-
-font-size:18px;
-color:#555;
-
-margin-bottom:30px;
-
-}
-
-
-/* HERO BUTTONS */
-
-.hero-buttons{
-
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-
-}
-
-.project-btn{
-
-background:#B43B2A;
-color:white;
-
-border:none;
-
-padding:14px 28px;
-
-font-size:16px;
-
-border-radius:6px;
-
-cursor:pointer;
-
-transition:0.3s;
-
-}
-
-.project-btn:hover{
-
-background:#b71c1c;
-
-transform:translateY(-3px);
-
-}
-
-.secondary-btn{
-
-background:white;
-
-color:#B43B2A;
-
-border:2px solid #d62828;
-
-padding:12px 26px;
-
-font-size:15px;
-
-border-radius:6px;
-
-cursor:pointer;
-
-transition:0.3s;
-
-}
-
-.secondary-btn:hover{
-
-background:#d62828;
-color:white;
-
-transform:translateY(-3px);
-
-}
-
-
-/* HEADINGS */
-
-h3 {
-color:#293b6b;
-font-size:25px;
-margin-bottom:15px;
-text-align:left;
-margin-top:50px;
-}
-
+.info-box h3 { color:var(--pink); margin-bottom:10px; }
+.info-box p { color:white; opacity:0.9; }
 
 /* INFO SECTIONS */
-
-.info-section{
-
-max-width:900px;
-
-margin:auto;
-
-padding:80px 20px;
-
-text-align:center;
-
-}
-
-.info-section h2{
-
-color:#B43B2A;
-
-font-size:28px;
-
-margin-bottom:50px;
-
-}
-
-.info-section p{
-
-font-size:17px;
-line-height:1.6;
-
-}
-
-
-/* TEAM SECTION */
-
-.team-section {
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
-
-.team-photo{
-
-width:100%;
-max-width:700px;
-
-display:block;
-
-margin:30px auto;
-
-border-radius:10px;
-
-}
-
-.team-list {
-
-list-style:none;
-
-padding:0;
-
-margin:40px auto;
-
-max-width:900px;
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-}
-
-.team-list li {
-
-background:#293B6B;
-
-border-radius:12px;
-
-padding:18px 22px;
-
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-
-transition:transform 0.2s ease, box-shadow 0.2s ease;
-
-font-size:15px;
-
-line-height:1.5;
-
-color:white;
-
-}
-
-.team-list li strong {
-
-display:block;
-
-font-size:17px;
-
-font-weight:700;
-
-margin-bottom:6px;
-
-color:white;
-
-}
-
-.team-list li:hover {
-
-transform:translateY(-4px);
-
-box-shadow:0 8px 18px rgba(0,0,0,0.15);
-
-}
-
-
-/* SPONSOR SECTION */
-
-.sponsor-section{
-
-background:#f5f5f5;
-
-text-align:center;
-
-color:#293B6B;
-
-padding:80px 20px;
-
-}
-
-.sponsor-btn{
-
-background:#293B6B;
-
-color:white;
-
-border:none;
-
-padding:15px 32px;
-
-font-size:16px;
-
-border-radius:6px;
-
-cursor:pointer;
-
-margin-top:20px;
-
-transition:0.3s;
-
-}
-
-.sponsor-btn:hover{
-
-background:#002070;
-
-transform:translateY(-3px);
-
-}
-
+.info-section { padding:100px 20px; }
 
 /* FOOTER */
+footer { text-align:center; padding:50px 20px; opacity:0.6; }
+footer img { height:40px; margin:5px; }
 
-footer{
-
-background:#293B6B;
-
-height:80px;
-
-display:flex;
-
-align-items:center;
-justify-content:flex-end;
-
-padding-right:40px;
-
-}
-
-.footer-watermark{
-height:60px;
-}
-
+/* FADE */
+.fade { opacity:0; transform: translateY(40px); transition:1s; }
+.fade.show { opacity:1; transform: translateY(0); }
 
 /* MOBILE */
-
-@media (max-width:768px){
-
-header{
-padding:0 20px;
-}
-
-.main-logo{
-width:160px;
-}
-
-h1{
-font-size:28px;
-}
-
-.subtitle{
-font-size:16px;
-}
-
-.hero{
-padding:60px 20px;
-}
-
-.hero-buttons{
-flex-direction:column;
-gap:12px;
-}
-
-.project-btn,
-.secondary-btn{
-width:100%;
-max-width:260px;
-}
-
-.info-section{
-padding:60px 20px;
-}
-
-.team-photo{
-max-width:100%;
-}
-
-.team-list{
-grid-template-columns:1fr;
-gap:14px;
-}
-
-.team-list li{
-font-size:14px;
-padding:14px;
-}
-
+@media (max-width:900px) {
+  .phage-container { grid-template-columns:1fr; }
+  #phage-canvas { height:350px; }
 }
