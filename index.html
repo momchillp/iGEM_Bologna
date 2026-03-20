@@ -6,6 +6,61 @@
 <title>iGEM Bologna 2026</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<style>
+.main-logo {
+  max-width: 200px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+}
+footer {
+  position: relative;
+  background-color: #222; 
+  color: #fff;
+  height: 80px;      
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 0 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;           
+  z-index: 1;           
+}
+
+.footer-watermark {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;                     
+  max-height: 60px;       
+}
+.flag-btn {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-btn img {
+  width: 32px;     /* adjust size here */
+  height: 20px;    /* keeps proper flag ratio */
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: highlight active flag */
+.flag-btn.active {
+  outline: 2px solid #fff;
+  border-radius: 4px;
+}
+
+</style>
 <body>
 
 <!-- PARTICLE BACKGROUND -->
@@ -17,15 +72,15 @@
     <img src="watermark1.png" class="watermark" alt="iGEM Bologna watermark">
   </div>
   <div class="header-right">
-    <button class="flag-btn"><img src="italy1.png" alt="Italian language"></button>
-    <button class="flag-btn active"><img src="uk1.png" alt="English language"></button>
+    <button class="flag-btn"><img src="italy.png" alt="Italian language"></button>
+    <button class="flag-btn active"><img src="uk.png" alt="English language"></button>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero fade">
   <div class="hero-content">
-    <img src="logo.jpeg" class="main-logo" alt="iGEM Bologna logo">
+    <img src="logo.png" class="main-logo" alt="iGEM Bologna logo">
     <h1 class="gradient-text">Welcome to iGEM Bologna 2026</h1>
     <p class="subtitle">Support our project in the world of synthetic biology innovations</p>
     <a href="#project" class="btn primary glow">About the Project</a>
@@ -37,38 +92,87 @@
 <section class="phage-section fade">
   <div class="phage-container">
     <div class="info-box">
-      <h3>Phage Structure</h3>
+      <h3>Why?</h3>
       <p>Our M13 bacteriophage is engineered to deliver CRISPR machinery precisely to tumor cells.</p>
     </div>
 
     <div id="phage-canvas"></div>
 
     <div class="info-box">
-      <h3>Mechanism</h3>
+      <h3>How?</h3>
       <p>The capsid and tail fibers enable specific recognition of cell receptors, ensuring targeted gene editing.</p>
     </div>
   </div>
 </section>
 
-<!-- PROJECT -->
-<section id="project" class="info-section fade">
-  <h2>About Our Project</h2>
-  <p>Our project goal is to develop a targeted delivery system using engineered bacteriophages...</p>
-</section>
+<section class="container">
+  <div class="section">
+    <h2>About Our Project</h2>
+    <p>
+     Our project goal is to develop a targeted delivery system using engineered bacteriophages as precise carriers for CRISPR/CAS gene-editing tools. By applying peptide-targeting technology, we program bacteriophages to recognize specific receptors expressed on cancer cells. This approach enables the selective delivery of gene-editing machinery directly to tumor cells, improving targeting accuracy while minimizing effects on healthy tissues
+    </p>
+    <p>The aim of this project is to develop a targeted double CAS9/gRNA delivery system capable of editing oncogenic punctual mutations in cancer cells. To accomplish this, we plan to use phage display to identify peptides that bind specific tumor cell receptors and engineer bacteriophages to deliver CAS9-base editor tools directly to these cells. The first validation step would be through a fluorescence-based proof of concept, starting in E. coli than moving in eukaryotic cancer cell lines. The system will be applied to edit point mutations in driver oncogenes.</p>
+  </div>
 
-<!-- WHAT IS IGEM -->
-<section id="igem" class="info-section fade">
-  <h2>What is iGEM?</h2>
-  <p>iGEM is an international synthetic biology competition where student teams design and build biological systems...</p>
-</section>
+  <div class="section">
+    <h2>What is iGEM?</h2>
+    <p>
+      iGEM is an international synthetic biology competition where student teams design and build biological systems using standardized genetic parts and integrating laboratory research, computational design, entrepreneurship, and science communication.
+    </p>
+    <p>Each year, many different teams from universities around the world develop innovative projects addressing global challenges regarding issues in fields such as health, sustainability, biotechnology, or environmental protection.
+At the end of the experience, each team will present the results obtained in a huge exhibition, and they will compete to win medals and special awards.
+In 2025, more than 400 teams from 66 countries took part in the competition, with over 5000 participants</p>
+      
+  </div>
 
+  <div class="section team-section">
+    <h2>Our Team</h2>
+
+    <img src="team.jpeg" alt="Team Photo" class="team-image">
+
+    <div class="team-cards">
+      <div class="card">
+        <h3>Lorenzo Tolomelli</h3>
+        <p>BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
+      </div>
+      <div class="card">
+        <h3>Francesca Bignami</h3>
+        <p>BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
+      </div>
+      <div class="card">
+        <h3>Sara Centonze</h3>
+        <p>BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
+      </div>
+      <div class="card">
+        <h3>Mariana Mussot Lopez</h3>
+        <p>BSc in Pharmacological and Biological Chemistry, currently studying Molecular and Cell Biology.</p>
+      </div>
+      <div class="card">
+        <h3>Momchil Petkov</h3>
+        <p>Undergraduate, currently studying Genomics.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section sponsor-section">
+    <h2>Become a Sponsor</h2>
+    <p>
+      Support our project and help us make an impact in synthetic biology.
+      Partner with us to drive innovation and research forward.
+    </p>
+
+    <a href="mailto:uniboigem@gmail.com" class="sponsor-btn">
+      Contact Us
+    </a>
+  </div>
+</section>
 <!-- FOOTER -->
 <footer>
-  <img src="watermark2.png" class="footer-watermark" alt="footer watermark">
   <div class="footer-links">
     <a href="https://instagram.com/igem_bologna" target="_blank"><img src="instagram.png" alt="Instagram"></a>
     <a href="mailto:uniboigem@gmail.com"><img src="email.png" alt="Email"></a>
   </div>
+  <img src="watermark2.png" class="footer-watermark" alt="footer watermark">
 </footer>
 
 <!-- THREE.JS -->
