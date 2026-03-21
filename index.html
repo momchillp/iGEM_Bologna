@@ -5,8 +5,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>iGEM Bologna 2026</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="team.css">
 </head>
 <style>
+.section::after {
+  content:"";
+  display:block;
+  height:1px;
+  margin:50px auto;
+  width:60%;
+  background: linear-gradient(to right,transparent,var(--pink),transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px; 
+}
+#progress {
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:0%;
+  background: linear-gradient(90deg,#ff6a00,#ff2e88);
+  z-index:2000;
+}
+
+.team-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  margin: 20px auto 40px;
+  display: block;
+}
+
+/* Cards container */
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* Individual card */
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(128, 128, 128, 0.2); /* transparent grey */
+  backdrop-filter: blur(6px); /* nice glass effect */
+  -webkit-backdrop-filter: blur(6px);
+  
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Text styling */
+.card h3 {
+  color: #ff2e88;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(128, 128, 128, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 .main-logo {
   max-width: 200px;
   max-height: 100px;
@@ -48,43 +132,78 @@ footer {
 }
 
 .flag-btn img {
-  width: 32px;     /* adjust size here */
-  height: 20px;    /* keeps proper flag ratio */
+  width: 32px;     
+  height: 20px;    
   object-fit: cover;
   display: block;
 }
 
-/* Optional: highlight active flag */
+
 .flag-btn.active {
-  outline: 2px solid #fff;
+  outline: 2px solid #ff2e88;
   border-radius: 4px;
+}
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 2.5rem;
 }
 
 </style>
 <body>
+<div id="progress"></div>
 
 <!-- PARTICLE BACKGROUND -->
 <canvas id="bg"></canvas>
 
-<!-- HEADER -->
-<header>
-  <div class="header-left">
+<nav class="navbar">
+<div class="header-left">
     <img src="watermark1.png" class="watermark" alt="iGEM Bologna watermark">
   </div>
-  <div class="header-right">
-    <button class="flag-btn"><img src="italy.png" alt="Italian language"></button>
+  
+  <ul>
+    <li><a href="#project" data-i18n="project">Project</a></li>
+    <li><a href="#igem">iGEM</a></li>
+    <li><a href="#team" data-i18n="team">Team</a></li>
+    <li><a href="#sponsors">Sponsor</a></li>
+  </ul>
+  
+<div class="header-right">
+    <button class="flag-btn"><img src="italy.jpg" alt="Italian language"></button>
     <button class="flag-btn active"><img src="uk.png" alt="English language"></button>
   </div>
-</header>
+</nav>
 
 <!-- HERO -->
-<section class="hero fade">
+<section class="hero">
   <div class="hero-content">
-    <img src="logo.png" class="main-logo" alt="iGEM Bologna logo">
-    <h1 class="gradient-text">Welcome to iGEM Bologna 2026</h1>
-    <p class="subtitle">Support our project in the world of synthetic biology innovations</p>
-    <a href="#project" class="btn primary glow">About the Project</a>
-    <a href="#igem" class="btn primary glow">What is iGEM?</a>
+   <img src="logo.png" class="main-logo" alt="iGEM Bologna logo">
+    <h1 data-i18n="hero-title">Engineering Precision Cancer Therapy</h1>
+    <p data-i18n="hero-subtitle">Using engineered bacteriophages to deliver CRISPR directly to tumor cells</p>
+    <div class="hero-buttons">
+      <a href="#project" class="btn primary" data-i18n="btn-project">Explore Project</a>
+      <a href="#sponsors" class="btn secondary" data-i18n="btn-sponsor">Become a Sponsor</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats fade">
+  <div class="stat">
+    <h2 class="counter" data-target="3000">0</h2>
+    <p data-i18n="stat1">Lab Hours</p>
+  </div>
+  <div class="stat">
+    <h2 class="counter" data-target="5">0</h2>
+    <p data-i18n="stat2"> Team Members</p>
+  </div>
+  <div class="stat">
+    <h2 class="counter" data-target="400">0</h2>
+    <p data-i18n="stat3">Global Teams</p>
   </div>
 </section>
 
@@ -92,76 +211,97 @@ footer {
 <section class="phage-section fade">
   <div class="phage-container">
     <div class="info-box">
-      <h3>Why?</h3>
-      <p>Our M13 bacteriophage is engineered to deliver CRISPR machinery precisely to tumor cells.</p>
+      <h3 data-i18n="phage1">Why?</h3>
+      <p data-i18n="phage2">Our M13 bacteriophage is engineered to deliver CRISPR machinery precisely to tumor cells.</p>
     </div>
 
     <div id="phage-canvas"></div>
 
     <div class="info-box">
-      <h3>How?</h3>
-      <p>The capsid and tail fibers enable specific recognition of cell receptors, ensuring targeted gene editing.</p>
+      <h3 data-i18n="phage3">How?</h3>
+      <p data-i18n="phage4">The capsid and tail fibers enable specific recognition of cell receptors, ensuring targeted gene editing.</p>
     </div>
   </div>
 </section>
-
-<section class="container">
+<br><br>
+<br><br>
+<section id="project" class="container fade">
   <div class="section">
-    <h2>About Our Project</h2>
-    <p>
+    <h2 data-i18n="project-title">About Our Project</h2>
+    <p data-i18n="project-text">
      Our project goal is to develop a targeted delivery system using engineered bacteriophages as precise carriers for CRISPR/CAS gene-editing tools. By applying peptide-targeting technology, we program bacteriophages to recognize specific receptors expressed on cancer cells. This approach enables the selective delivery of gene-editing machinery directly to tumor cells, improving targeting accuracy while minimizing effects on healthy tissues
     </p>
-    <p>The aim of this project is to develop a targeted double CAS9/gRNA delivery system capable of editing oncogenic punctual mutations in cancer cells. To accomplish this, we plan to use phage display to identify peptides that bind specific tumor cell receptors and engineer bacteriophages to deliver CAS9-base editor tools directly to these cells. The first validation step would be through a fluorescence-based proof of concept, starting in E. coli than moving in eukaryotic cancer cell lines. The system will be applied to edit point mutations in driver oncogenes.</p>
+<br><br>
+    <p data-i18n="project-aim-text">The aim of this project is to develop a targeted double CAS9/gRNA delivery system capable of editing oncogenic punctual mutations in cancer cells. To accomplish this, we plan to use phage display to identify peptides that bind specific tumor cell receptors and engineer bacteriophages to deliver CAS9-base editor tools directly to these cells. The first validation step would be through a fluorescence-based proof of concept, starting in E. coli than moving in eukaryotic cancer cell lines. The system will be applied to edit point mutations in driver oncogenes.</p>
   </div>
 
-  <div class="section">
-    <h2>What is iGEM?</h2>
-    <p>
+  <div id="igem" class="section fade">
+    <h2 data-i18n="igem-title">What is iGEM?</h2>
+    <p data-i18n="igem-text">
       iGEM is an international synthetic biology competition where student teams design and build biological systems using standardized genetic parts and integrating laboratory research, computational design, entrepreneurship, and science communication.
     </p>
-    <p>Each year, many different teams from universities around the world develop innovative projects addressing global challenges regarding issues in fields such as health, sustainability, biotechnology, or environmental protection.
+<br><br>
+    <p data-i18n="igem-text2">Each year, many different teams from universities around the world develop innovative projects addressing global challenges regarding issues in fields such as health, sustainability, biotechnology, or environmental protection.
 At the end of the experience, each team will present the results obtained in a huge exhibition, and they will compete to win medals and special awards.
 In 2025, more than 400 teams from 66 countries took part in the competition, with over 5000 participants</p>
       
   </div>
 
-  <div class="section team-section">
-    <h2>Our Team</h2>
+  <div class="section team-section fade">
+    <h2 data-i18n="team-title">Meet the Team</h2>
+   
+    <div id="team" class="team-container">
 
-    <img src="team.jpeg" alt="Team Photo" class="team-image">
+    <p data-i18n="team-text">Our team is composed of international and interdisciplinary students with backgrounds in molecular biology, synthetic biology, bioinformatics, biochemistry, biomedical engineering, and genetics.</p>
+    <p data-i18n="igem-extra">This wide spectrum allows us to confront the project from multiple perspectives, including experimental design, computational modeling, and forward applications. The whole team collaborates closely to design experiments, analyze results, and communicate findings to achieve better results. Four more positions will be filled in the next month.</p>
 
-    <div class="team-cards">
-      <div class="card">
-        <h3>Lorenzo Tolomelli</h3>
-        <p>BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
-      </div>
-      <div class="card">
-        <h3>Francesca Bignami</h3>
-        <p>BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
-      </div>
-      <div class="card">
-        <h3>Sara Centonze</h3>
-        <p>BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
-      </div>
-      <div class="card">
-        <h3>Mariana Mussot Lopez</h3>
-        <p>BSc in Pharmacological and Biological Chemistry, currently studying Molecular and Cell Biology.</p>
-      </div>
-      <div class="card">
-        <h3>Momchil Petkov</h3>
-        <p>Undergraduate, currently studying Genomics.</p>
-      </div>
-    </div>
+  <img src="team.jpeg" alt="Team Photo" class="team-image">
+
+  <!-- Highlight overlays -->
+  <div class="highlight" id="person-1"></div>
+  <div class="highlight" id="person-2"></div>
+  <div class="highlight" id="person-3"></div>
+  <div class="highlight" id="person-4"></div>
+  <div class="highlight" id="person-5"></div>
+</div>
+
+<div class="team-cards fade">
+  <div class="card" data-person="person-1">
+    <h3>Lorenzo Tolomelli</h3>
+    <p data-i18n="lorenzo-role">BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
   </div>
 
-  <div class="section sponsor-section">
-    <h2>Become a Sponsor</h2>
-    <p>
-      Support our project and help us make an impact in synthetic biology.
-      Partner with us to drive innovation and research forward.
-    </p>
+  <div class="card" data-person="person-2">
+    <h3>Francesca Bignami</h3>
+    <p data-i18n="francesca-role">BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
+  </div>
 
-    <a href="mailto:uniboigem@gmail.com" class="sponsor-btn">
+  <div class="card" data-person="person-3">
+    <h3>Sara Centonze</h3>
+    <p data-i18n="sara-role">BSc in Biotechnology, currently studying Molecular and Cell Biology.</p>
+  </div>
+
+  <div class="card" data-person="person-4">
+    <h3>Mariana Mussot Lopez</h3>
+    <p data-i18n="mariana-role">BSc in Pharmacological and Biological Chemistry, currently studying Molecular and Cell Biology.</p>
+  </div>
+
+  <div class="card" data-person="person-5">
+    <h3>Momchil Petkov</h3>
+    <p data-i18n="momchil-role">Undergraduate, currently studying Genomics.</p>
+  </div>
+</div>
+</section>
+
+
+<div id="sponsors" class="section sponsor-section fade">
+    <h2 data-i18n="sponsor-title">Become a Sponsor</h2>
+    <p style="text-align: center;" data-i18n="sponsor-text">
+  Support our project and help us make an impact in synthetic biology.
+  Partner with us to drive innovation and research forward.
+</p>
+
+    <a href="mailto:uniboigem@gmail.com" class="sponsor-btn" data-i18n="btn-contact">
       Contact Us
     </a>
   </div>
@@ -179,5 +319,7 @@ In 2025, more than 400 teams from 66 countries took part in the competition, wit
 <script src="https://cdn.jsdelivr.net/npm/three@0.134/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/loaders/GLTFLoader.js"></script>
 <script src="script.js"></script>
+<script src="scrow.js"></script>
+<script src="translate.js"></script>
 </body>
 </html>

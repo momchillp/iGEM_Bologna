@@ -199,7 +199,7 @@ window.addEventListener('load', () => {
 
         // Idle rotation ONLY when stopped
         if (velocity.x === 0 && velocity.y === 0 && velocity.z === 0) {
-          phageModel.rotation.y += 0.0015;
+          phageModel.rotation.y += 0.002;
         }
       }
     }
@@ -212,5 +212,63 @@ window.addEventListener('load', () => {
     renderer.setSize(container.clientWidth, container.clientHeight);
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
+  });
+});
+
+const counters = document.querySelectorAll('.counter');
+
+const runCounter = (counter) => {
+  let update = () => {
+    let target = +counter.getAttribute('data-target');
+    let count = +counter.innerText;
+
+    let inc = target / 100;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count + inc);
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  update();
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counter = entry.target;
+
+      // Prevent running multiple times
+      if (!counter.classList.contains('started')) {
+        counter.classList.add('started');
+        runCounter(counter);
+      }
+
+      observer.unobserve(counter); // optional: stop observing after trigger
+    }
+  });
+}, {
+  threshold: 0.5 // trigger when 50% visible (adjust if needed)
+});
+
+// Attach observer to each counter
+counters.forEach(counter => {
+  observer.observe(counter);
+});
+
+
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  const id = card.getAttribute('data-person');
+  const highlight = document.getElementById(id);
+
+  card.addEventListener('mouseenter', () => {
+    highlight.classList.add('active');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    highlight.classList.remove('active');
   });
 });

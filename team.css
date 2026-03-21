@@ -1,0 +1,31 @@
+
+.team-container {
+  position: relative;
+  display: inline-block;
+}
+
+.team-image {
+  width: 100%;
+  display: block;
+}
+
+.highlight {
+  position: absolute;
+  border: 3px solid transparent;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+
+#person-1 { top: 8%; left: 25%; width: 15%; height: 40%; }
+#person-2 { top: 20%; left: 37%; width: 15%; height: 40%; }
+#person-3 { top: 30%; left: 25%; width: 15%; height: 40%; }
+#person-4 { top: 20%; left: 13%; width: 15%; height: 40%;}
+#person-5 { top: 15%; left: 55%; width: 15%; height: 40%; }
+
+
+.highlight.active {
+  border: 3px solid #ff2e88;
+  box-shadow: 0 0 20px #ff2e88;
+  background: rgba(255, 46, 136, 0.15);
+}
