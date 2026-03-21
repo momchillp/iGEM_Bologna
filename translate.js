@@ -28,8 +28,7 @@ In 2025, more than 400 teams from 66 countries took part in the competition, wit
     "team-text": "Our team is composed of international and interdisciplinary students with backgrounds in molecular biology, synthetic biology, bioinformatics, biochemistry, biomedical engineering, and genetics.",
     "team-extra": "This wide spectrum allows us to confront the project from multiple perspectives, including experimental design, computational modeling, and forward applications. The whole team collaborates closely to design experiments, analyze results, and communicate findings to achieve better results. Four more positions will be filled in the next month.",
     "sponsor-title": "Become a Sponsor",
-    "sponsor-text": " Support our project and help us make an impact in synthetic biology.
-  Partner with us to drive innovation and research forward.",
+    "sponsor-text": ' Support our project and help us make an impact in synthetic biology. Partner with us to drive innovation and research forward.',
     "btn-contact": "Contact Us",
     "lorenzo-role": "BSc in Biotechnology, currently studying Molecular and Cell Biology.",
     "francesca-role": "BSc in Biotechnology, currently studying Molecular and Cell Biology.",
@@ -61,8 +60,7 @@ In 2025, more than 400 teams from 66 countries took part in the competition, wit
     "team-text": "Il nostro team è composto da studenti internazionali e interdisciplinari con background in biologia molecolare, biologia sintetica, bioinformatica, biochimica, ingegneria biomedica e genetica.",
     "team-extra": "Questa ampia gamma ci permette di affrontare il progetto da molteplici prospettive, incluso design sperimentale, modellizzazione computazionale e applicazioni future. L'intero team collabora strettamente per progettare esperimenti, analizzare risultati e comunicare i risultati per ottenere performance migliori. Quattro posizioni aggiuntive saranno occupate nel prossimo mese.",
     "sponsor-title": "Diventa Sponsor",
-    "sponsor-text": "Sostieni il nostro progetto e aiutaci a lasciare il segno nella biologia sintetica.
-Collabora con noi per promuovere l'innovazione e la ricerca.",
+    "sponsor-text": "Sostieni il nostro progetto e aiutaci a lasciare il segno nella biologia sintetica. Collabora con noi per promuovere l'innovazione e la ricerca.",
     "btn-contact": "Contattaci",
     "lorenzo-role": "Laurea triennale in Biotecnologie — attualmente studente di Biologia Molecolare e Cellulare.",
     "francesca-role": "Laurea triennale in Biotecnologie — attualmente studentessa di Biologia Molecolare e Cellulare.",
