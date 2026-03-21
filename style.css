@@ -11,7 +11,6 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
 /* PARTICLES */
 #bg { position: fixed; top:0; left:0; z-index:-3; }
 
-/* Navbar container */
 .navbar {
   width: 100%;
   display: flex;
@@ -76,7 +75,6 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
 .navbar-links li a:hover {
   color: #ff2e88;
 }
-
 /* HERO */
 .hero {
   height:100vh;
