@@ -43,6 +43,26 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
   display: none; /* hidden on desktop */
 }
 
+/* Mobile adjustments */
+@media (max-width: 800px) {
+  .navbar-links {
+    display: none;        /* hide links by default */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .hamburger {
+    display: block;       /* show hamburger on mobile */
+  }
+
+  .navbar-links.show {
+    display: flex;        /* show links when toggled */
+  }
+}
+
 /* Navbar links */
 .navbar-links {
   display: flex;
