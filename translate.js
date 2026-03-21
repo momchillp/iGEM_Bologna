@@ -74,23 +74,31 @@ Collabora con noi per promuovere l'innovazione e la ricerca.",
 
 // Translate function using data-i18n keys
 function translatePage(lang) {
+  // Translate all elements with data-i18n
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    if (translations[lang][key]) {
-      el.innerHTML = translations[lang][key];
+    if (translations[lang].hasOwnProperty(key)) {
+      el.textContent = translations[lang][key]; // safer than innerHTML
     }
   });
 
-  // Update active flag
+  // Update active flag button
   document.querySelectorAll(".flag-btn").forEach(btn => btn.classList.remove("active"));
-  const activeBtn = document.querySelector(`.flag-btn img[alt*="${lang === 'it' ? 'Italian' : 'English'}"]`);
-  if (activeBtn) activeBtn.parentElement.classList.add("active");
+  const activeBtn = document.querySelector(`.flag-btn[data-lang="${lang}"]`);
+  if (activeBtn) activeBtn.classList.add("active");
+
+  // Save language preference
+  localStorage.setItem("lang", lang);
 }
 
 // Flag buttons event listeners
 document.querySelectorAll(".flag-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    const lang = btn.querySelector("img").alt.includes("Italian") ? "it" : "en";
+    const lang = btn.dataset.lang; // get language from data-lang
     translatePage(lang);
   });
 });
+
+// On page load: use saved language or default to English
+const savedLang = localStorage.getItem("lang") || "en";
+translatePage(savedLang);
