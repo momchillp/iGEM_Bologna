@@ -267,14 +267,7 @@ cards.forEach(card => {
   card.addEventListener('mouseenter', () => {
     highlight.classList.add('active');
   });
-  document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".navbar-links");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-});
+  
 
   card.addEventListener('mouseleave', () => {
     highlight.classList.remove('active');
