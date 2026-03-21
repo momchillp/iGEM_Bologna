@@ -28,7 +28,7 @@ In 2025, more than 400 teams from 66 countries took part in the competition, wit
     "team-text": "Our team is composed of international and interdisciplinary students with backgrounds in molecular biology, synthetic biology, bioinformatics, biochemistry, biomedical engineering, and genetics.",
     "team-extra": "This wide spectrum allows us to confront the project from multiple perspectives, including experimental design, computational modeling, and forward applications. The whole team collaborates closely to design experiments, analyze results, and communicate findings to achieve better results. Four more positions will be filled in the next month.",
     "sponsor-title": "Become a Sponsor",
-    "sponsor-text": ' Support our project and help us make an impact in synthetic biology. Partner with us to drive innovation and research forward.',
+    "sponsor-text": " Support our project and help us make an impact in synthetic biology. Partner with us to drive innovation and research forward.",
     "btn-contact": "Contact Us",
     "lorenzo-role": "BSc in Biotechnology, currently studying Molecular and Cell Biology.",
     "francesca-role": "BSc in Biotechnology, currently studying Molecular and Cell Biology.",
@@ -73,20 +73,12 @@ In 2025, more than 400 teams from 66 countries took part in the competition, wit
 document.addEventListener("DOMContentLoaded", () => {
   // Translate function using data-i18n keys
   function translatePage(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (translations[lang].hasOwnProperty(key)) {
-      el.innerHTML = translations[lang][key]; // use innerHTML for multi-line support
-    }
-  });
-
-  // Update active flag
-  document.querySelectorAll(".flag-btn").forEach(btn => btn.classList.remove("active"));
-  const activeBtn = document.querySelector(`.flag-btn[data-lang="${lang}"]`);
-  if (activeBtn) activeBtn.classList.add("active");
-
-  localStorage.setItem("lang", lang);
-}
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang].hasOwnProperty(key)) {
+        el.textContent = translations[lang][key];
+      }
+    });
 
     // Update active flag
     document.querySelectorAll(".flag-btn").forEach(btn => btn.classList.remove("active"));
