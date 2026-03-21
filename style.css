@@ -77,18 +77,6 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
   color: #ff2e88;
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .navbar-top {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .navbar-links {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
 /* HERO */
 .hero {
   height:100vh;
