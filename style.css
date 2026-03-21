@@ -11,48 +11,84 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
 /* PARTICLES */
 #bg { position: fixed; top:0; left:0; z-index:-3; }
 
+/* ===== NAVBAR BASE ===== */
 .navbar {
   position: fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:15px 40px;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
   backdrop-filter: blur(10px);
   background: rgba(0,0,0,0.4);
-  z-index:1000;
+  z-index: 1000;
 }
 
+/* Nav links */
 .navbar ul {
-  display:flex;
-  gap:20px;
-  list-style:none;
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
+/* Links */
 .navbar a {
-  color:white;
-  text-decoration:none;
-  opacity:0.8;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
-  opacity:1;
+  opacity: 1;
 }
-/* Hamburger hidden on desktop */
+
+/* Right section (flags) */
+.header-right {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
-  font-size: 28px;
-  color: white;
   cursor: pointer;
+  z-index: 1100;
 }
 
-/* Mobile styles */
+/* Hamburger lines */
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* Animation to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== MOBILE MENU ===== */
 @media (max-width: 768px) {
 
+  /* Show hamburger */
   .hamburger {
     display: block;
   }
 
+  /* Hide menu by default */
   .navbar ul {
     position: absolute;
     top: 70px;
@@ -63,23 +99,19 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
     backdrop-filter: blur(10px);
     text-align: center;
 
-    /* hidden by default */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
 
+  /* Show menu when active */
   .navbar ul.active {
-    max-height: 300px; /* expands menu */
+    max-height: 300px;
   }
 
+  /* Spacing for links */
   .navbar li {
     padding: 15px 0;
-  }
-
-  /* Optional: hide flags inside menu or move them */
-  .header-right {
-    display: none;
   }
 }
 /* HERO */
