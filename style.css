@@ -24,10 +24,18 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
   position: fixed;
   top: 0;
 }
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;       /* don’t stretch to fill navbar */
+}
+
 .header-left img.watermark {
-  width: 20px;      /* fixed width */
-  height: auto;     /* maintain aspect ratio */
+  width: 20px;       /* fixed size */
+  height: auto;      /* keep ratio */
   object-fit: contain;
+  display: block;    /* avoid stretching inline */
 }
 /* Top row: logo + flags + hamburger */
 .navbar-top {
