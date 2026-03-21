@@ -24,7 +24,10 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
   position: fixed;
   top: 0;
 }
-
+.header-left img {
+  max-width: 20px;
+  height: auto;
+}
 /* Top row: logo + flags + hamburger */
 .navbar-top {
   width: 100%;
