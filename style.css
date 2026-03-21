@@ -38,7 +38,50 @@ body { background: var(--bg); color: var(--text); overflow-x:hidden; }
 .navbar a:hover {
   opacity:1;
 }
+/* Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
 
+/* Mobile styles */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+    text-align: center;
+
+    /* hidden by default */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar ul.active {
+    max-height: 300px; /* expands menu */
+  }
+
+  .navbar li {
+    padding: 15px 0;
+  }
+
+  /* Optional: hide flags inside menu or move them */
+  .header-right {
+    display: none;
+  }
+}
 /* HERO */
 .hero {
   height:100vh;
